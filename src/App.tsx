@@ -1,7 +1,8 @@
 import './App.css'
 import './styles/marquee.css'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from 'react-icons/fa'
+import { useState } from 'react'
 
 import synqcity from './assets/sinqcity.svg'
 import kashbuddy from './assets/kashbuddy.svg'
@@ -10,6 +11,12 @@ import bau from './assets/bau.svg'
 import Header from './components/header'
 
 function App() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const handleImageClick = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+  };
+
   return (
     <div className="bg-black text-white font-sans">
       {/* Landing page */}
@@ -88,7 +95,8 @@ function App() {
                 <img 
                   src={bau} 
                   alt="BAU Project"
-                  className="w-full h-full object-contain rounded-lg"
+                  className="w-full h-full object-contain rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => handleImageClick(bau)}
                 />
               </div>
             </div>
@@ -99,7 +107,8 @@ function App() {
                 <img 
                   src={kashbuddy} 
                   alt="Kashbuddy Project"
-                  className="w-full h-full object-contain rounded-lg"
+                  className="w-full h-full object-contain rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => handleImageClick(kashbuddy)}
                 />
               </div>
               <div className="w-6 h-6 rounded-full bg-white"></div>
@@ -144,7 +153,8 @@ function App() {
                 <img 
                   src={synqcity} 
                   alt="Synced City Project"
-                  className="w-full h-full object-contain rounded-lg"
+                  className="w-full h-full object-contain rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => handleImageClick(synqcity)}
                 />
               </div>
             </div>
@@ -152,10 +162,28 @@ function App() {
         </div>
       </section>
 
-      {/* Projects */}
-      <div>
-        
-      </div>
+      {/* Image Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 cursor-pointer"
+          >
+            <motion.img
+              initial={{ scale: 0.5 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.5 }}
+              src={selectedImage}
+              alt="Project Preview"
+              className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <section className="p-20 text-center">
         <h2 className="text-3xl text-blue-300#1ABC9C] font-semibold">About Me</h2>
