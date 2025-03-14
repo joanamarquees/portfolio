@@ -1,7 +1,11 @@
 import './App.css'
 import './styles/marquee.css'
-import { motion } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
+import { motion } from 'framer-motion'
+import { FaHtml5, FaCss3Alt, FaJs, FaReact } from 'react-icons/fa'
+
+import synqcity from './assets/sinqcity.svg'
+import kashbuddy from './assets/kashbuddy.svg'
+import bau from './assets/bau.svg'
 
 import Header from './components/header'
 
@@ -60,59 +64,87 @@ function App() {
       </div>
 
       {/* Timeline Section */}
-      <section className="min-h-screen pt-20">
+      <section className="min-h-screen py-20">
         <div className="relative flex justify-center">
           <div className="absolute h-[100vh] w-[3px] bg-white/20"></div>
           <div className="flex flex-col justify-between h-[90vh] py-20">
             {/* First timeline item */}
             <div className="relative flex items-center">
-              <div className="absolute left-10 w-96">
-                <a
-                  href="https://multisynq-hackathon-frontend.vercel.app/"
-                  className="text-2xl font-semibold text-blue-300"
-                >
-                  Sinq City
-                </a>
-                <p className="text-lg text-gray-400 mt-2">project description bla bla bla bla</p>
+              <div className="absolute left-10 w-[500px]">
+                <h1 className="text-4xl font-semibold text-blue-300">
+                  BAU
+                </h1>
+                <p className="animate-pulse text-green-200">(in production)</p>
+                <p className="text-lg text-gray-400 mt-2">
+                  I'm currently developing a social media platform
+                  designed to give underground artists more visibility.
+                  It will be a space where they can showcase their work,
+                  share events, sell their art and products, and even offer
+                  tickets for their own events.
+                </p>
               </div>
-              <div className="w-6 h-6 rounded-full bg-white"></div>
-              <div className="absolute right-10 w-96 border-2 border-green-500">
+              <div className="w-6 h-6 rounded-full bg-green-900"></div>
+              <div className="absolute right-10 items-center flex justify-center h-80 w-[500px]">
                 <img 
-                  src="/projects/sinqcity.png" 
-                  alt="Sinq City Project"
-                  className="w-full h-48 object-cover rounded-lg shadow-lg"
+                  src={bau} 
+                  alt="BAU Project"
+                  className="w-full h-full object-contain rounded-lg"
                 />
               </div>
             </div>
 
             {/* Second timeline item */}
             <div className="relative flex items-center">
-              <div className="absolute left-10 w-96">
+              <div className="absolute left-10 items-center flex justify-center h-80 w-[500px]">
                 <img 
-                  src="/projects/kashbuddy.png" 
+                  src={kashbuddy} 
                   alt="Kashbuddy Project"
-                  className="w-full h-48 object-cover rounded-lg shadow-lg"
+                  className="w-full h-full object-contain rounded-lg"
                 />
               </div>
               <div className="w-6 h-6 rounded-full bg-white"></div>
-              <div className="absolute right-10 w-96 text-right">
-                <h3 className="text-2xl font-semibold text-blue-300">Kashbuddy</h3>
-                <p className="text-lg text-gray-400 mt-2">Creating intuitive and beautiful user interfaces that engage users</p>
+              <div className="absolute right-10 w-[500px] text-right">
+                <a
+                  href="https://kashbuddy.vercel.app/"
+                  className="text-4xl font-semibold text-blue-300"
+                >
+                  Kashbuddy
+                </a>
+                <p className="text-lg text-gray-400 mt-2">
+                  I wanted a better way to keep track of my finances,
+                  so I built KashBuddy. It helps me monitor my income
+                  and expenses, categorize transactions, and manage
+                  finances across multiple bank accounts—all without
+                  paying for ad-free features and with a UI that suits
+                  my style.
+                </p>
               </div>
             </div>
 
             {/* Third timeline item */}
             <div className="relative flex items-center">
-              <div className="absolute left-10 w-96">
-                <h3 className="text-2xl font-semibold text-blue-300">BAU</h3>
-                <p className="text-lg text-gray-400 mt-2">Mastering the latest development tools and staying current with tech trends</p>
+              <div className="absolute left-10 w-[500px]">
+                <a
+                  href="https://multisynq-hackathon-frontend.vercel.app/"
+                  className="text-4xl font-semibold text-blue-300"
+                >
+                  Synced City
+                </a>
+                <p className="text-lg text-gray-400 mt-2">
+                  For my first hackathon, HackTogether, I teamed
+                  up with my partner, André Santos, to create SynqCity
+                  —a social app designed to connect people. Our goal was
+                  to encourage users to step out of their comfort zones
+                  and explore underground events, new restaurants,
+                  trending hotspots, and social gatherings happening nearby.
+                </p>
               </div>
               <div className="w-6 h-6 rounded-full bg-white"></div>
-              <div className="absolute right-10 w-96">
+              <div className="absolute right-10 items-center flex justify-center h-80 w-[500px]">
                 <img 
-                  src="/projects/bau.png" 
-                  alt="BAU Project"
-                  className="w-full h-48 object-cover rounded-lg shadow-lg"
+                  src={synqcity} 
+                  alt="Synced City Project"
+                  className="w-full h-full object-contain rounded-lg"
                 />
               </div>
             </div>
