@@ -1,20 +1,36 @@
 import './App.css'
 import './styles/marquee.css'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaHtml5, FaCss3Alt, FaJs, FaReact } from 'react-icons/fa'
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaLinkedin, FaGithub, FaGitAlt } from 'react-icons/fa'
 import { useState } from 'react'
 
 import synqcity from './assets/sinqcity.svg'
 import kashbuddy from './assets/kashbuddy.svg'
-import bau from './assets/bau.svg'
+import hello from './assets/hello.svg'
 
 import Header from './components/header'
+import Projects from './components/projects'
+import { MdEmail } from 'react-icons/md'
+import { SiFirebase, SiTailwindcss, SiTypescript } from 'react-icons/si'
 
 function App() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  const projectLinks: Record<string, string> = {
+    [kashbuddy]: 'https://kashbuddy.vercel.app/',
+    [synqcity]: 'https://multisynq-hackathon-frontend.vercel.app/',
+    // BAU doesn't have a link yet since it's in production
+  };
+
   const handleImageClick = (imageSrc: string) => {
     setSelectedImage(imageSrc);
+  };
+
+  const handleModalImageClick = (e: React.MouseEvent<HTMLImageElement>) => {
+    e.stopPropagation();
+    if (selectedImage && projectLinks[selectedImage]) {
+      window.open(projectLinks[selectedImage], '_blank');
+    }
   };
 
   return (
@@ -52,7 +68,7 @@ function App() {
             className="absolute bottom-[50%] right-20 w-auto max-w-md"
           >
             <p className="text-right text-lg leading-relaxed tracking-wide text-white/90">      
-              Hey there, I'm <span className="text-blue-300 font-semibold">Joana</span>.
+              Hey there, I'm <span className="text-[#7b9cea] font-semibold">Joana</span>.
               <br /><br />
               I make websites look good and work well.
               <br />
@@ -60,7 +76,7 @@ function App() {
               <br />
               crocheting something unnecessary, or convincing
               <br />
-              my rabbits that my cables are not chew toys.
+              my bunnies that my cables are not chew toys. 
             </p>
           </motion.div>
 
@@ -70,157 +86,131 @@ function App() {
         </div>
       </div>
 
-      {/* Timeline Section */}
-      <section className="min-h-screen py-20">
-        <div className="relative flex justify-center">
-          <div className="absolute h-[100vh] w-[3px] bg-white/20"></div>
-          <div className="flex flex-col justify-between h-[90vh] py-20">
-            {/* First timeline item */}
-            <div className="relative flex items-center">
-              <div className="absolute left-10 w-[500px]">
-                <h1 className="text-4xl font-semibold text-blue-300">
-                  BAU
-                </h1>
-                <p className="animate-pulse text-green-200">(in production)</p>
-                <p className="text-lg text-gray-400 mt-2">
-                  I'm currently developing a social media platform
-                  designed to give underground artists more visibility.
-                  It will be a space where they can showcase their work,
-                  share events, sell their art and products, and even offer
-                  tickets for their own events.
-                </p>
-              </div>
-              <div className="w-6 h-6 rounded-full bg-green-900"></div>
-              <div className="absolute right-10 items-center flex justify-center h-80 w-[500px]">
-                <img 
-                  src={bau} 
-                  alt="BAU Project"
-                  className="w-full h-full object-contain rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
-                  onClick={() => handleImageClick(bau)}
-                />
-              </div>
-            </div>
-
-            {/* Second timeline item */}
-            <div className="relative flex items-center">
-              <div className="absolute left-10 items-center flex justify-center h-80 w-[500px]">
-                <img 
-                  src={kashbuddy} 
-                  alt="Kashbuddy Project"
-                  className="w-full h-full object-contain rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
-                  onClick={() => handleImageClick(kashbuddy)}
-                />
-              </div>
-              <div className="w-6 h-6 rounded-full bg-white"></div>
-              <div className="absolute right-10 w-[500px] text-right">
-                <a
-                  href="https://kashbuddy.vercel.app/"
-                  className="text-4xl font-semibold text-blue-300"
-                >
-                  Kashbuddy
-                </a>
-                <p className="text-lg text-gray-400 mt-2">
-                  I wanted a better way to keep track of my finances,
-                  so I built KashBuddy. It helps me monitor my income
-                  and expenses, categorize transactions, and manage
-                  finances across multiple bank accounts—all without
-                  paying for ad-free features and with a UI that suits
-                  my style.
-                </p>
-              </div>
-            </div>
-
-            {/* Third timeline item */}
-            <div className="relative flex items-center">
-              <div className="absolute left-10 w-[500px]">
-                <a
-                  href="https://multisynq-hackathon-frontend.vercel.app/"
-                  className="text-4xl font-semibold text-blue-300"
-                >
-                  Synced City
-                </a>
-                <p className="text-lg text-gray-400 mt-2">
-                  For my first hackathon, HackTogether, I teamed
-                  up with my partner, André Santos, to create SynqCity
-                  —a social app designed to connect people. Our goal was
-                  to encourage users to step out of their comfort zones
-                  and explore underground events, new restaurants,
-                  trending hotspots, and social gatherings happening nearby.
-                </p>
-              </div>
-              <div className="w-6 h-6 rounded-full bg-white"></div>
-              <div className="absolute right-10 items-center flex justify-center h-80 w-[500px]">
-                <img 
-                  src={synqcity} 
-                  alt="Synced City Project"
-                  className="w-full h-full object-contain rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
-                  onClick={() => handleImageClick(synqcity)}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Projects Section */}
+      <Projects onImageClick={handleImageClick} />
 
       {/* Image Modal */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {selectedImage && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             onClick={() => setSelectedImage(null)}
             className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 cursor-pointer"
           >
             <motion.img
-              initial={{ scale: 0.5 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.5 }}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.16, 1, 0.3, 1], // custom bezier curve for a smooth feel
+                opacity: { duration: 0.2 }
+              }}
               src={selectedImage}
               alt="Project Preview"
-              className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
-              onClick={(e) => e.stopPropagation()}
+              className={`max-w-[90vw] max-h-[90vh] object-contain rounded-lg ${projectLinks[selectedImage] ? 'cursor-pointer' : ''}`}
+              onClick={handleModalImageClick}
             />
           </motion.div>
         )}
       </AnimatePresence>
 
-      <section className="p-20 text-center">
-        <h2 className="text-3xl text-blue-300#1ABC9C] font-semibold">About Me</h2>
-        <p className="mt-4 max-w-xl mx-auto text-lg text-gray-400">
-          Passionate developer with expertise in modern web technologies.
-        </p>
-        <div className="flex justify-center gap-6 mt-6 text-3xl text-blue-300">
-          <FaHtml5 />
-          <FaCss3Alt />
-          <FaJs />
-          <FaReact />
+      <section id="about" className="flex w-screen h-[100vh] mt-[14vh] text-gray-300">
+        <div className="w-[20%] h-full flex items-center justify-center">
+            <div className="transform -rotate-90">
+              <h2 className="h-[10%] w-full text-[10rem] font-bold animate-wave bg-gradient-to-r from-[#dae5ff] via-[#3f5ca2] to-[#dae5ff] text-transparent bg-clip-text bg-[length:200%_100%]">
+                ABOUT
+              </h2>
+            </div>
+        </div>
+
+        <div className="w-[80%] h-full flex items-center">  
+          <div className="w-full flex flex-col gap-20">
+            <div className="flex justify-between items-center font-light">
+              <div className="flex flex-col gap-6">
+          <p className="w-[40rem] text-3xl">
+            Hey, I'm Joana! A frontend developer and web designer who
+            creates intuitive and visually appealing apps. I work from
+            concept to code, using mostly Figma, React & Tailwind.
+          </p>
+          <p className="w-[55rem] text-3xl">
+            I often say I'm from the world. Though I was born in Portugal, my
+            life has been split between Angola, Cape Verde, and France. This has
+            given me a natural ability to adapt and a deep love for traveling and
+            exploring new cultures. When I'm not pulling my hair out over code,
+            you'll find me crocheting and creating interior design projects for
+            houses that don't even exist.
+          </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 w-[28rem]">
+          {[
+          FaHtml5,
+          FaJs,
+          SiTypescript,
+          FaReact,
+          SiFirebase,
+          FaCss3Alt,
+          SiTailwindcss,
+          FaGitAlt
+          ].map((Icon, index) => (
+          <div key={index} className="w-20 h-20 bg-gray-800/50 rounded-lg flex items-center justify-center hover:bg-gray-700/50 transition-colors">
+            <Icon className="text-4xl text-[#7b9cea]" />
+          </div>
+          ))}
+              </div>
+            </div>
+            <p className="text-3xl font-bold text-center">
+              my goal? creating seamless, engaging, and user-friendly digital experiences.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="p-20 text-center items-center">
-        <h2 className="text-3xl text-blue-300 font-semibold">Contact Me</h2>
-        <div className="max-w-lg mx-auto mt-6">
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="mb-4 p-3 rounded-md bg-gray-800 text-white w-full focus:outline-none focus:ring-2 focus:ring-[#1ABC9C]"
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="mb-4 p-3 rounded-md bg-gray-800 text-white w-full focus:outline-none focus:ring-2 focus:ring-[#1ABC9C]"
-          />
-          <textarea
-            placeholder="Your Message"
-            className="mb-4 p-3 rounded-md bg-gray-800 text-white w-full h-32 focus:outline-none focus:ring-2 focus:ring-[#1ABC9C]"
-          />
-          <motion.button
-            className="bg-[#1ABC9C] text-black px-6 py-2 rounded-full hover:bg-teal-400 transition"
-            whileHover={{ scale: 1.05 }}
-          >
-            Send Message
-          </motion.button>
+      {/* Footer/Contact Section */}
+      <section id="contact" className="flex w-screen h-[70vh] text-gray-300 relative">
+        <img 
+          src={hello} 
+          alt="Hello illustration" 
+          className="absolute right-20 scale-x-[-1] bottom-0 w-96"
+        />
+        <div className="w-full h-full flex items-center">
+          <div className="w-full flex flex-col gap-16 items-center">
+            <p className="text-6xl font-light text-center max-w-7xl px-4 leading-relaxed">
+              Got a question or proposal, or just want to say <span className="text-[#7b9cea] font-normal">hello</span>? Go ahead.
+            </p>
+            
+            <div className="flex gap-12">
+              <a 
+                href="https://www.linkedin.com/in/joana-marques-33a170220/"
+                className="flex items-center gap-3 text-2xl hover:text-[#7b9cea] transition-colors"
+              >
+                <FaLinkedin className="text-4xl" />
+                LinkedIn
+              </a>
+              <a 
+                href="https://github.com/joanamarquees"
+                className="flex items-center gap-3 text-2xl hover:text-[#7b9cea] transition-colors"
+              >
+                <FaGithub className="text-4xl" />
+                GitHub
+              </a>
+              <a 
+                href="mailto:joanacfmarques@ulisboa.tecnico.pt"
+                className="flex items-center gap-3 text-2xl hover:text-[#7b9cea] transition-colors"
+              >
+                <MdEmail className="text-4xl" />
+                Email
+              </a>
+            </div>
+
+            <p className="text-lg mt-12 text-gray-500">
+              &copy; 2025 ~ Made with ♡ by Joana M
+            </p>
+          </div>
         </div>
       </section>
     </div>    

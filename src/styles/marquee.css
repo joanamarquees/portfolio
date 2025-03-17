@@ -25,3 +25,16 @@
   animation: marqueeRight 25s linear infinite;
   text-shadow: 0 0 20px rgba(255,255,255,0.1);
 }
+
+@keyframes wave {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-wave {
+  animation: wave 8s linear infinite;
+}
