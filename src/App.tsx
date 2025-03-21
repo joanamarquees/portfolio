@@ -43,7 +43,7 @@ function App() {
           <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-transparent pointer-events-none" />
           
           {/* Marquee text */}
-          <div className="absolute bottom-[10%] w-screen flex flex-col text-9xl font-bold tracking-tight">
+          <div className="absolute bottom-[15%] md:bottom-[10%] w-screen flex flex-col text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight">
             <div className="flex whitespace-nowrap">
               <div className="animate-marquee-2 flex gap-[50vw] opacity-90">
                 <p className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Frontend developer</p>
@@ -65,17 +65,15 @@ function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="absolute bottom-[50%] right-20 w-auto max-w-md"
+            className="absolute bottom-[50%] right-5 md:right-10 lg:right-20 w-auto max-w-md"
           >
-            <p className="text-right text-lg leading-relaxed tracking-wide text-white/90">      
+            <p className="text-right text-md md:text-lg leading-relaxed tracking-wide text-white/90">      
               Hey there, I'm <span className="text-[#7b9cea] font-semibold">Joana</span>.
               <br /><br />
               I make websites look good and work well.
               <br />
               When I'm not coding, I'm either designing,
-              <br />
               crocheting something unnecessary, or convincing
-              <br />
               my bunnies that my cables are not chew toys. 
             </p>
           </motion.div>

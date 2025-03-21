@@ -20,10 +20,10 @@ export default function Projects({ onImageClick }: ProjectsProps) {
   };
 
   return (
-    <section id="projects"  className="h-full pb-20 pt-[22vh]">
-      <div className="relative flex justify-center">
-        <div className="absolute h-[100vh] w-[3px] bg-white/20"></div>
-        <div className="flex flex-col justify-between h-[90vh] py-20">
+    <section id="projects" className="h-full pb-20 pt-[22vh]">
+      <div className="relative flex justify-center gap-5">
+        <div className="absolute h-[100vh] w-[3px] bg-transparent lg:bg-white/20"></div>
+        <div className="flex flex-col justify-between h-[90vh] py-10 md:py-20">
           {/* First timeline item */}
           <motion.div 
             ref={projectRefs[0]}
@@ -31,9 +31,9 @@ export default function Projects({ onImageClick }: ProjectsProps) {
             animate={projectsInView[0] ? "visible" : "hiddenLeft"}
             variants={slideVariants}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative flex items-center"
+            className="relative flex flex-col md:flex-row items-center mb-10 md:mb-[35vh]"
           >
-            <div className="absolute left-10 w-[500px]">
+            <div className="px-4 md:px-0 md:absolute md:left-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none mt-4 md:mt-0">
               <h1 className="text-4xl font-semibold text-[#7b9cea]">BAU</h1>
               <p className="animate-pulse text-green-200">(in production)</p>
               <p className="text-lg text-gray-400 mt-2">
@@ -44,8 +44,8 @@ export default function Projects({ onImageClick }: ProjectsProps) {
                 tickets for their own events.
               </p>
             </div>
-            <div className="w-6 h-6 rounded-full bg-green-900"></div>
-            <div className="absolute right-10 items-center flex justify-center h-80 w-[500px]">
+            <div className="w-6 h-6 rounded-full bg-green-900 hidden md:block"></div>
+            <div className="px-4 md:px-0 md:absolute md:right-10 items-center flex justify-center h-60 md:h-80 w-full md:w-[300px] lg:w-[500px] order-1 md:order-none">
               <img 
                 src={bau} 
                 alt="BAU Project"
@@ -62,9 +62,9 @@ export default function Projects({ onImageClick }: ProjectsProps) {
             animate={projectsInView[1] ? "visible" : "hiddenRight"}
             variants={slideVariants}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative flex items-center"
+            className="relative flex flex-col md:flex-row items-center py-10 md:mb-[35vh]"
           >
-            <div className="absolute left-10 items-center flex justify-center h-80 w-[500px]">
+            <div className="px-4 md:px-0 md:absolute md:left-10 items-center flex justify-center h-60 md:h-80 w-full md:w-[300px] lg:w-[500px] order-1 md:order-none">
               <img 
                 src={kashbuddy} 
                 alt="Kashbuddy Project"
@@ -72,12 +72,12 @@ export default function Projects({ onImageClick }: ProjectsProps) {
                 onClick={() => onImageClick(kashbuddy)}
               />
             </div>
-            <div className="w-6 h-6 rounded-full bg-white"></div>
-            <div className="absolute right-10 w-[500px] text-right">
-              <a href="https://kashbuddy.vercel.app/" className="text-4xl font-semibold text-[#7b9cea]">
+            <div className="w-6 h-6 rounded-full bg-white hidden md:block"></div>
+            <div className="px-4 md:px-0 md:absolute md:right-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none mt-4 md:mt-0">
+              <a href="https://kashbuddy.vercel.app/" className="text-4xl font-semibold text-[#7b9cea] md:text-right">
                 Kashbuddy
               </a>
-              <p className="text-lg text-gray-400 mt-2">
+              <p className="text-lg text-gray-400 mt-2 md:text-right">
                 I wanted a better way to keep track of my finances,
                 so I built KashBuddy. It helps me monitor my income
                 and expenses, categorize transactions, and manage
@@ -95,9 +95,9 @@ export default function Projects({ onImageClick }: ProjectsProps) {
             animate={projectsInView[2] ? "visible" : "hiddenLeft"}
             variants={slideVariants}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative flex items-center"
+            className="relative flex flex-col md:flex-row items-center"
           >
-            <div className="absolute left-10 w-[500px]">
+            <div className="px-4 md:px-0 md:absolute md:left-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none mt-4 md:mt-0">
               <a href="https://multisynq-hackathon-frontend.vercel.app/" className="text-4xl font-semibold text-[#7b9cea]">
                 Synced City
               </a>
@@ -110,8 +110,8 @@ export default function Projects({ onImageClick }: ProjectsProps) {
                 trending hotspots, and social gatherings happening nearby.
               </p>
             </div>
-            <div className="w-6 h-6 rounded-full bg-white"></div>
-            <div className="absolute right-10 items-center flex justify-center h-80 w-[500px]">
+            <div className="w-6 h-6 rounded-full bg-white hidden md:block"></div>
+            <div className="px-4 md:px-0 md:absolute md:right-10 items-center flex justify-center h-60 md:h-80 w-full md:w-[300px] lg:w-[500px] order-1 md:order-none">
               <img 
                 src={synqcity} 
                 alt="Synced City Project"
