@@ -20,7 +20,7 @@ export default function Projects({ onImageClick }: ProjectsProps) {
   };
 
   return (
-    <section id="projects" className="h-full pb-20 pt-[15vh] md:pt-[22vh] px-5 md:px-0">
+    <section id="projects" className="h-full pt-[15vh] md:pt-[22vh] px-5 md:px-0">
       <div className="relative flex justify-center gap-5">
         <div className="absolute h-[100vh] w-[3px] bg-transparent lg:bg-white/20"></div>
         <div className="flex flex-col justify-between h-full md:h-[90vh] py-10 md:py-20">

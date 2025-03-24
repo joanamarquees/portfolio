@@ -118,7 +118,7 @@ function App() {
 
       <section
         id="about"
-        className="flex flex-col md:flex-row w-screen min-h-screen py-20 text-gray-300"
+        className="flex flex-col md:flex-row w-screen min-h-screen py-10 text-gray-300 overflow-x-hidden"
       >
         <div className="w-full md:w-[20%] flex-shrink-0 flex items-center justify-center">
           <div className="transform md:-rotate-90">
