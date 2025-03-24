@@ -29,11 +29,22 @@ const Header = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string, scrollBlock='start' as ScrollLogicalPosition) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: scrollBlock
+      });
+    }
+  };
+
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm shadow-md py-4 px-5 md:px-10 overflow-hidden w-screen h-[14vh]">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm shadow-md py-2 md:py-4 px-5 md:px-10 overflow-hidden w-screen h-auto">
         <div className="flex justify-between items-center relative">
-          <a href="#">
+          <a href="#" onClick={(e) => scrollToSection(e, 'root')}>
             <div 
               ref={avatarRef}
               className="h-14 md:h-30 w-14 md:w-30"
@@ -55,13 +66,13 @@ const Header = () => {
 
           <ul className="flex gap-3 md:gap-8 text-xl md:text-4xl lg:text-6xl">
             <li>
-              <a href="#projects" className="hover:text-[#3F5CA2] transition">PROJECTS</a>
+              <a href="#projects" onClick={(e) => scrollToSection(e, 'projects')} className="hover:text-[#3F5CA2] transition">PROJECTS</a>
             </li> 
             <li>
-              <a href="#about" className="hover:text-[#3F5CA2] transition">ABOUT</a>
+              <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-[#3F5CA2] transition">ABOUT</a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-[#3F5CA2] transition">CONTACT</a>
+              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact', 'end')} className="hover:text-[#3F5CA2] transition">CONTACT</a>
             </li>
           </ul>
         </div>
