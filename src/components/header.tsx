@@ -29,13 +29,13 @@ const Header = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string, scrollBlock='start' as ScrollLogicalPosition) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: scrollBlock
       });
     }
   };
@@ -72,7 +72,7 @@ const Header = () => {
               <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-[#3F5CA2] transition">ABOUT</a>
             </li>
             <li>
-              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="hover:text-[#3F5CA2] transition">CONTACT</a>
+              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact', 'end')} className="hover:text-[#3F5CA2] transition">CONTACT</a>
             </li>
           </ul>
         </div>
