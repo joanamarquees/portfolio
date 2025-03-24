@@ -116,36 +116,54 @@ function App() {
         )}
       </AnimatePresence>
 
-      <section id="about" className="flex w-screen h-[100vh] mt-[14vh] text-gray-300">
-        <div className="w-[20%] h-full flex items-center justify-center">
-            <div className="transform -rotate-90">
-              <h2 className="h-[10%] w-full text-[10rem] font-bold animate-wave bg-gradient-to-r from-[#dae5ff] via-[#3f5ca2] to-[#dae5ff] text-transparent bg-clip-text bg-[length:200%_100%]">
-                ABOUT
-              </h2>
-            </div>
+      <section
+        id="about"
+        className="flex flex-col md:flex-row w-screen h-screen mt-[14vh] text-gray-300"
+      >
+        <div className="w-full md:w-[20%] h-[20%] md:h-full flex items-center justify-center">
+          <div className="transform md:-rotate-90">
+        <h2 className="h-full lg:h-[10%] w-full text-7xl md:text-8xl lg:text-[10rem] font-bold animate-wave bg-gradient-to-r from-[#dae5ff] via-[#3f5ca2] to-[#dae5ff] text-transparent bg-clip-text bg-[length:200%_100%]">
+          ABOUT
+        </h2>
+          </div>
         </div>
 
-        <div className="w-[80%] h-full flex items-center">  
-          <div className="w-full flex flex-col gap-20">
-            <div className="flex justify-between items-center font-light">
-              <div className="flex flex-col gap-6">
-          <p className="w-[40rem] text-3xl">
-            Hey, I'm Joana! A frontend developer and web designer who
-            creates intuitive and visually appealing apps. I work from
-            concept to code, using mostly Figma, React & Tailwind.
-          </p>
-          <p className="w-[55rem] text-3xl">
-            I often say I'm from the world. Though I was born in Portugal, my
-            life has been split between Angola, Cape Verde, and France. This has
-            given me a natural ability to adapt and a deep love for traveling and
-            exploring new cultures. When I'm not pulling my hair out over code,
-            you'll find me crocheting and creating interior design projects for
-            houses that don't even exist.
-          </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-2 w-[28rem]">
+        <div className="w-full md:w-[80%] h-[80%] md:h-full flex items-center">  
+          <div className="w-full flex flex-col gap-10">
+        <div className="flex flex-col lg:flex-row lg:justify-between items-center font-light p-10 lg:pr-20 lg:pt-20">
+          <div className="flex flex-col gap-6">
+            <p className="max-w-[40rem] text-xl md:text-xl lg:text-3xl">
+          Hey, I'm Joana! A frontend developer and web designer who
+          creates intuitive and visually appealing apps. I work from
+          concept to code, using mostly Figma, React & Tailwind.
+            </p>
+            <p className="max-w-[50rem] text-xl md:text-xl lg:text-3xl">
+          I often say I'm from the world. Though I was born in Portugal, my
+          life has been split between Angola, Cape Verde, and France. This has
+          given me a natural ability to adapt and a deep love for traveling and
+          exploring new cultures. When I'm not pulling my hair out over code,
+          you'll find me crocheting and creating interior design projects for
+          houses that don't even exist.
+            </p>
+            <div className="lg:hidden grid grid-cols-4 lg:grid-cols-2 gap-2 lg:gap-x-10 max-w-[20rem] mx-auto">
           {[
+            FaHtml5,
+            FaJs,
+            SiTypescript,
+            FaReact,
+            SiFirebase,
+            FaCss3Alt,
+            SiTailwindcss,
+            FaGitAlt
+          ].map((Icon, index) => (
+            <div key={index} className="w-8 h-8 md:w-16 md:h-16 bg-gray-800/50 rounded-lg flex items-center justify-center hover:bg-gray-700/50 transition-colors">
+              <Icon className="text-2xl md:text-3xl text-[#7b9cea]" />
+            </div> 
+          ))}
+            </div>
+          </div>
+          <div className="hidden lg:grid grid-cols-2 gap-2 max-w-[28rem] lg:ml-40">
+            {[
           FaHtml5,
           FaJs,
           SiTypescript,
@@ -154,16 +172,17 @@ function App() {
           FaCss3Alt,
           SiTailwindcss,
           FaGitAlt
-          ].map((Icon, index) => (
-          <div key={index} className="w-20 h-20 bg-gray-800/50 rounded-lg flex items-center justify-center hover:bg-gray-700/50 transition-colors">
+            ].map((Icon, index) => (
+          <div key={index} className="w-10 md:w-20 h-10 md:h-20 bg-gray-800/50 rounded-lg flex items-center justify-center hover:bg-gray-700/50 transition-colors">
             <Icon className="text-4xl text-[#7b9cea]" />
+          </div> 
+            ))}
           </div>
-          ))}
-              </div>
-            </div>
-            <p className="text-3xl font-bold text-center">
-              my goal? creating seamless, engaging, and user-friendly digital experiences.
-            </p>
+        </div>
+        {/* Goal */}
+        <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center p-2 lg:p-0">
+          my goal? creating seamless, engaging, and user-friendly digital experiences.
+        </p>
           </div>
         </div>
       </section>

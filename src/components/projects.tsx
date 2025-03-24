@@ -23,7 +23,7 @@ export default function Projects({ onImageClick }: ProjectsProps) {
     <section id="projects" className="h-full pb-20 pt-[22vh]">
       <div className="relative flex justify-center gap-5">
         <div className="absolute h-[100vh] w-[3px] bg-transparent lg:bg-white/20"></div>
-        <div className="flex flex-col justify-between h-[90vh] py-10 md:py-20">
+        <div className="flex flex-col justify-between h-full md:h-[90vh] py-10 md:py-20">
           {/* First timeline item */}
           <motion.div 
             ref={projectRefs[0]}
