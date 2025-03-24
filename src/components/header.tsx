@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm shadow-md py-2 md:py-4 px-5 md:px-10 overflow-hidden w-screen h-[14vh]">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm shadow-md py-2 md:py-4 px-5 md:px-10 overflow-hidden w-screen h-[10vh] lg:h-[14vh]">
         <div className="flex justify-between items-center relative">
           <a href="#">
             <div 

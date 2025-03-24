@@ -120,11 +120,11 @@ function App() {
         id="about"
         className="flex flex-col md:flex-row w-screen h-screen mt-[14vh] text-gray-300"
       >
-        <div className="w-full md:w-[20%] h-[20%] md:h-full flex items-center justify-center">
+        <div className="w-full md:w-[20%] h-[20%] md:h-full flex items-end md:items-center justify-center">
           <div className="transform md:-rotate-90">
-        <h2 className="h-full lg:h-[10%] w-full text-7xl md:text-8xl lg:text-[10rem] font-bold animate-wave bg-gradient-to-r from-[#dae5ff] via-[#3f5ca2] to-[#dae5ff] text-transparent bg-clip-text bg-[length:200%_100%]">
-          ABOUT
-        </h2>
+            <h2 className="h-full lg:h-[10%] w-full text-7xl md:text-8xl lg:text-[10rem] font-bold animate-wave bg-gradient-to-r from-[#dae5ff] via-[#3f5ca2] to-[#dae5ff] text-transparent bg-clip-text bg-[length:200%_100%]">
+              ABOUT
+            </h2>
           </div>
         </div>
 
@@ -188,45 +188,45 @@ function App() {
       </section>
 
       {/* Footer/Contact Section */}
-      <section id="contact" className="flex w-screen h-[70vh] text-gray-300 relative">
+      <section id="contact" className="flex h-screen w-screen min-h-[70vh] text-gray-300 relative py-10">
         <img 
           src={hello} 
           alt="Hello illustration" 
-          className="absolute right-20 scale-x-[-1] bottom-0 w-96"
+          className="absolute right-0 md:right-20 scale-x-[-1] bottom-0 w-48 md:w-72 lg:w-96 opacity-50 md:opacity-100"
         />
         <div className="w-full h-full flex items-center">
-          <div className="w-full flex flex-col gap-16 items-center">
-            <p className="text-6xl font-light text-center max-w-7xl px-4 leading-relaxed">
-              Got a question or proposal, or just want to say <span className="text-[#7b9cea] font-normal">hello</span>? Go ahead.
-            </p>
-            
-            <div className="flex gap-12">
-              <a 
-                href="https://www.linkedin.com/in/joana-marques-33a170220/"
-                className="flex items-center gap-3 text-2xl hover:text-[#7b9cea] transition-colors"
-              >
-                <FaLinkedin className="text-4xl" />
-                LinkedIn
-              </a>
-              <a 
-                href="https://github.com/joanamarquees"
-                className="flex items-center gap-3 text-2xl hover:text-[#7b9cea] transition-colors"
-              >
-                <FaGithub className="text-4xl" />
-                GitHub
-              </a>
-              <a 
-                href="mailto:joanacfmarques@ulisboa.tecnico.pt"
-                className="flex items-center gap-3 text-2xl hover:text-[#7b9cea] transition-colors"
-              >
-                <MdEmail className="text-4xl" />
-                Email
-              </a>
-            </div>
+          <div className="w-full flex flex-col gap-8 md:gap-16 items-center">
+        <p className="text-3xl md:text-4xl lg:text-6xl font-light text-center max-w-7xl px-4 leading-relaxed">
+          Got a question or proposal, or just want to say <span className="text-[#7b9cea] font-normal">hello</span>? Go ahead.
+        </p>
+        
+        <div className="flex flex-col md:flex-row gap-6 md:gap-12">
+          <a 
+            href="https://www.linkedin.com/in/joana-marques-33a170220/"
+            className="flex items-center gap-3 text-xl md:text-2xl hover:text-[#7b9cea] transition-colors"
+          >
+            <FaLinkedin className="text-3xl md:text-4xl" />
+            LinkedIn
+          </a>
+          <a 
+            href="https://github.com/joanamarquees"
+            className="flex items-center gap-3 text-xl md:text-2xl hover:text-[#7b9cea] transition-colors"
+          >
+            <FaGithub className="text-3xl md:text-4xl" />
+            GitHub
+          </a>
+          <a 
+            href="mailto:joanacfmarques@ulisboa.tecnico.pt"
+            className="flex items-center gap-3 text-xl md:text-2xl hover:text-[#7b9cea] transition-colors"
+          >
+            <MdEmail className="text-3xl md:text-4xl" />
+            Email
+          </a>
+        </div>
 
-            <p className="text-lg mt-12 text-gray-500">
-              &copy; 2025 ~ Made with ♡ by Joana M
-            </p>
+        <p className="text-base md:text-lg mt-8 md:mt-12 text-gray-500">
+          &copy; 2025 ~ Made with ♡ by Joana M
+        </p>
           </div>
         </div>
       </section>
