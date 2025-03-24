@@ -20,7 +20,7 @@ export default function Projects({ onImageClick }: ProjectsProps) {
   };
 
   return (
-    <section id="projects" className="h-full pb-20 pt-[22vh]">
+    <section id="projects" className="h-full pb-20 pt-[15vh] md:pt-[22vh] px-5 md:px-0">
       <div className="relative flex justify-center gap-5">
         <div className="absolute h-[100vh] w-[3px] bg-transparent lg:bg-white/20"></div>
         <div className="flex flex-col justify-between h-full md:h-[90vh] py-10 md:py-20">
@@ -31,9 +31,9 @@ export default function Projects({ onImageClick }: ProjectsProps) {
             animate={projectsInView[0] ? "visible" : "hiddenLeft"}
             variants={slideVariants}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative flex flex-col md:flex-row items-center mb-10 md:mb-[35vh]"
+            className="relative flex flex-col md:flex-row items-center mb-16 md:mb-[35vh]"
           >
-            <div className="px-4 md:px-0 md:absolute md:left-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none mt-4 md:mt-0">
+            <div className="text-center md:text-left md:px-0 md:absolute md:left-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none mt-4 md:mt-0">
               <h1 className="text-4xl font-semibold text-[#7b9cea]">BAU</h1>
               <p className="animate-pulse text-green-200">(in production)</p>
               <p className="text-lg text-gray-400 mt-2">
