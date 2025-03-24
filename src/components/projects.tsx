@@ -33,7 +33,7 @@ export default function Projects({ onImageClick }: ProjectsProps) {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="relative flex flex-col md:flex-row items-center mb-16 md:mb-[35vh]"
           >
-            <div className="text-center md:text-left md:px-0 md:absolute md:left-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none mt-4 md:mt-0">
+            <div className="text-center md:text-left md:px-0 md:absolute md:left-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none py-5 md:mt-0">
               <h1 className="text-4xl font-semibold text-[#7b9cea]">BAU</h1>
               <p className="animate-pulse text-green-200">(in production)</p>
               <p className="text-lg text-gray-400 mt-2">
@@ -62,7 +62,7 @@ export default function Projects({ onImageClick }: ProjectsProps) {
             animate={projectsInView[1] ? "visible" : "hiddenRight"}
             variants={slideVariants}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative flex flex-col md:flex-row items-center py-10 md:mb-[35vh]"
+            className="relative flex flex-col md:flex-row items-center py-10 md:mb-[35vh] text-center"
           >
             <div className="px-4 md:px-0 md:absolute md:left-10 items-center flex justify-center h-60 md:h-80 w-full md:w-[300px] lg:w-[500px] order-1 md:order-none">
               <img 
@@ -73,7 +73,7 @@ export default function Projects({ onImageClick }: ProjectsProps) {
               />
             </div>
             <div className="w-6 h-6 rounded-full bg-white hidden md:block"></div>
-            <div className="px-4 md:px-0 md:absolute md:right-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none mt-4 md:mt-0">
+            <div className="px-4 md:px-0 md:absolute md:right-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none py-5 md:mt-0">
               <a href="https://kashbuddy.vercel.app/" className="text-4xl font-semibold text-[#7b9cea] md:text-right">
                 Kashbuddy
               </a>
@@ -95,10 +95,13 @@ export default function Projects({ onImageClick }: ProjectsProps) {
             animate={projectsInView[2] ? "visible" : "hiddenLeft"}
             variants={slideVariants}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative flex flex-col md:flex-row items-center"
+            className="text-center relative flex flex-col md:flex-row items-center"
           >
-            <div className="px-4 md:px-0 md:absolute md:left-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none mt-4 md:mt-0">
-              <a href="https://multisynq-hackathon-frontend.vercel.app/" className="text-4xl font-semibold text-[#7b9cea]">
+            <div className="px-4 md:px-0 md:absolute md:left-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none py-5 md:mt-0">
+              <a
+                href="https://multisynq-hackathon-frontend.vercel.app/"
+                className="text-4xl font-semibold text-[#7b9cea]"
+              >
                 Synced City
               </a>
               <p className="text-lg text-gray-400 mt-2">
