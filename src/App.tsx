@@ -34,7 +34,7 @@ function App() {
   };
 
   return (
-    <div className="bg-black text-white font-sans overflow-x-hidden">
+    <div className="bg-black text-white font-sans">
       {/* Landing page */}
       <div className="h-screen">
         <Header />
