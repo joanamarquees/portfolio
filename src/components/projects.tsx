@@ -20,10 +20,10 @@ export default function Projects({ onImageClick }: ProjectsProps) {
   };
 
   return (
-    <section id="projects" className="h-full pt-[15vh] md:pt-[22vh] px-5 md:px-0">
-      <div className="relative flex justify-center gap-5">
-        <div className="absolute h-[100vh] w-[3px] bg-transparent lg:bg-white/20"></div>
-        <div className="flex flex-col justify-between h-full md:h-[90vh] py-10 md:py-20">
+    <section id="projects" className="min-h-screen pt-[15vh] md:pt-[22vh] px-5 md:px-20 pb-20">
+      <div className="relative flex justify-center">
+        <div className="absolute h-full w-[3px] bg-transparent lg:bg-white/20"></div>
+        <div className="flex flex-col w-full gap-16">
           {/* First timeline item */}
           <motion.div 
             ref={projectRefs[0]}
@@ -31,9 +31,18 @@ export default function Projects({ onImageClick }: ProjectsProps) {
             animate={projectsInView[0] ? "visible" : "hiddenLeft"}
             variants={slideVariants}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative flex flex-col md:flex-row items-center mb-16 md:mb-[35vh]"
+            className="relative flex flex-col md:flex-row items-center gap-8"
           >
-            <div className="text-center md:text-left md:px-0 md:absolute md:left-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none py-5 md:mt-0">
+            <div className="w-full md:w-1/2 flex justify-center items-center order-1">
+              <img 
+                src={bau} 
+                alt="BAU Project"
+                className="w-full h-60 md:h-80 object-contain rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
+                onClick={() => onImageClick(bau)}
+              />
+            </div>
+            <div className="w-6 h-6 rounded-full bg-transparent lg:bg-green-900 hidden md:block absolute left-1/2 -translate-x-1/2"></div>
+            <div className="text-center md:text-left w-full md:w-1/2 order-2">
               <h1 className="text-4xl font-semibold text-[#7b9cea]">BAU</h1>
               <p className="animate-pulse text-green-200">(in production)</p>
               <p className="text-lg text-gray-400 mt-2">
@@ -44,15 +53,6 @@ export default function Projects({ onImageClick }: ProjectsProps) {
                 tickets for their own events.
               </p>
             </div>
-            <div className="w-6 h-6 rounded-full bg-green-900 hidden md:block"></div>
-            <div className="px-4 md:px-0 md:absolute md:right-10 items-center flex justify-center h-60 md:h-80 w-full md:w-[300px] lg:w-[500px] order-1 md:order-none">
-              <img 
-                src={bau} 
-                alt="BAU Project"
-                className="w-full h-full object-contain rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
-                onClick={() => onImageClick(bau)}
-              />
-            </div>
           </motion.div>
 
           {/* Second timeline item */}
@@ -62,19 +62,10 @@ export default function Projects({ onImageClick }: ProjectsProps) {
             animate={projectsInView[1] ? "visible" : "hiddenRight"}
             variants={slideVariants}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative flex flex-col md:flex-row items-center py-10 md:mb-[35vh] text-center"
+            className="relative flex flex-col md:flex-row items-center gap-8"
           >
-            <div className="px-4 md:px-0 md:absolute md:left-10 items-center flex justify-center h-60 md:h-80 w-full md:w-[300px] lg:w-[500px] order-1 md:order-none">
-              <img 
-                src={kashbuddy} 
-                alt="Kashbuddy Project"
-                className="w-full h-full object-contain rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
-                onClick={() => onImageClick(kashbuddy)}
-              />
-            </div>
-            <div className="w-6 h-6 rounded-full bg-white hidden md:block"></div>
-            <div className="px-4 md:px-0 md:absolute md:right-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none py-5 md:mt-0">
-              <a href="https://kashbuddy.vercel.app/" className="text-4xl font-semibold text-[#7b9cea] md:text-right">
+            <div className="text-center md:text-right w-full md:w-1/2 order-2 md:order-none">
+              <a href="https://kashbuddy.vercel.app/" className="text-4xl font-semibold text-[#7b9cea]">
                 Kashbuddy
               </a>
               <p className="text-lg text-gray-400 mt-2 md:text-right">
@@ -86,6 +77,15 @@ export default function Projects({ onImageClick }: ProjectsProps) {
                 my style.
               </p>
             </div>
+            <div className="w-6 h-6 rounded-full bg-transparent lg:bg-white hidden md:block absolute left-1/2 -translate-x-1/2"></div>
+            <div className="w-full md:w-1/2 flex justify-center items-center order-1">
+              <img 
+                src={kashbuddy} 
+                alt="Kashbuddy Project"
+                className="w-full h-60 md:h-80 object-contain rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
+                onClick={() => onImageClick(kashbuddy)}
+              />
+            </div>
           </motion.div>
 
           {/* Third timeline item */}
@@ -95,9 +95,18 @@ export default function Projects({ onImageClick }: ProjectsProps) {
             animate={projectsInView[2] ? "visible" : "hiddenLeft"}
             variants={slideVariants}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="text-center relative flex flex-col md:flex-row items-center"
+            className="relative flex flex-col md:flex-row items-center gap-8"
           >
-            <div className="px-4 md:px-0 md:absolute md:left-10 w-full md:w-[300px] lg:w-[500px] order-2 md:order-none py-5 md:mt-0">
+            <div className="w-full md:w-1/2 flex justify-center items-center order-1">
+              <img 
+                src={synqcity} 
+                alt="Synced City Project"
+                className="w-full h-60 md:h-80 object-contain rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
+                onClick={() => onImageClick(synqcity)}
+              />
+            </div>
+            <div className="w-6 h-6 rounded-full bg-transparent lg:bg-white hidden md:block absolute left-1/2 -translate-x-1/2"></div>
+            <div className="text-center md:text-left w-full md:w-1/2 order-2">
               <a
                 href="https://multisynq-hackathon-frontend.vercel.app/"
                 className="text-4xl font-semibold text-[#7b9cea]"
@@ -112,15 +121,6 @@ export default function Projects({ onImageClick }: ProjectsProps) {
                 and explore underground events, new restaurants,
                 trending hotspots, and social gatherings happening nearby.
               </p>
-            </div>
-            <div className="w-6 h-6 rounded-full bg-white hidden md:block"></div>
-            <div className="px-4 md:px-0 md:absolute md:right-10 items-center flex justify-center h-60 md:h-80 w-full md:w-[300px] lg:w-[500px] order-1 md:order-none">
-              <img 
-                src={synqcity} 
-                alt="Synced City Project"
-                className="w-full h-full object-contain rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
-                onClick={() => onImageClick(synqcity)}
-              />
             </div>
           </motion.div>
         </div>

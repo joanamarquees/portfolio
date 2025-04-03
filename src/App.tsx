@@ -122,69 +122,70 @@ function App() {
       >
         <div className="w-full md:w-[20%] flex-shrink-0 flex items-center justify-center">
           <div className="transform md:-rotate-90">
-            <h2 className="w-full text-7xl md:text-8xl lg:text-[10rem] font-bold animate-wave bg-gradient-to-r from-[#dae5ff] via-[#3f5ca2] to-[#dae5ff] text-transparent bg-clip-text bg-[length:200%_100%]">
+            <h2 className="w-full text-7xl md:text-[8rem] lg:text-[10rem] font-bold animate-wave bg-gradient-to-r from-[#dae5ff] via-[#3f5ca2] to-[#dae5ff] text-transparent bg-clip-text bg-[length:200%_100%]">
               ABOUT
             </h2>
           </div>
         </div>
 
-        <div className="w-full md:w-[80%] h-[80%] md:h-full flex items-center">  
-            <div className="w-full flex flex-col gap-10">
-            <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center font-light p-4 lg:pr-20 lg:pt-20">
-              <div className="flex flex-col gap-6 text-center md:text-left">
-              <p className="max-w-[40rem] text-xl md:text-xl lg:text-3xl">
-                Hey, I'm Joana! A frontend developer and web designer who
-                creates intuitive and visually appealing apps. I work from
-                concept to code, using mostly Figma, React & Tailwind.
-              </p>
-              <p className="max-w-[50rem] text-xl md:text-xl lg:text-3xl">
-                I often say I'm from the world. Though I was born in Portugal, my
-                life has been split between Angola, Cape Verde, and France. This has
-                given me a natural ability to adapt and a deep love for traveling and
-                exploring new cultures. When I'm not pulling my hair out over code,
-                you'll find me crocheting and creating interior design projects for
-                houses that don't even exist.
-              </p>
-              <div className="lg:hidden flex flex-col items-center w-full px-4">
-                <div className="grid grid-cols-4 lg:grid-cols-2 gap-2 lg:gap-x-10 max-w-[20rem] mt-8">
+        {/* ABOUT content */}
+        <div className="w-full md:w-[80%] flex items-center justify-center py-10 md:py-0">  
+            <div className="w-full flex flex-col gap-10 px-4 lg:px-20">
+              <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-10">
+                <div className="flex flex-col gap-6 text-center md:text-left">
+                <p className="max-w-[40rem] text-xl md:text-xl lg:text-3xl">
+                  Hey, I'm Joana! A frontend developer and web designer who
+                  creates intuitive and visually appealing apps. I work from
+                  concept to code, using mostly Figma, React & Tailwind.
+                </p>
+                <p className="max-w-[50rem] text-xl md:text-xl lg:text-3xl">
+                  I often say I'm from the world. Though I was born in Portugal, my
+                  life has been split between Angola, Cape Verde, and France. This has
+                  given me a natural ability to adapt and a deep love for traveling and
+                  exploring new cultures. When I'm not pulling my hair out over code,
+                  you'll find me crocheting and creating interior design projects for
+                  houses that don't even exist.
+                </p>
+                <div className="lg:hidden flex flex-col items-center w-full px-4">
+                  <div className="grid grid-cols-4 lg:grid-cols-2 gap-2 lg:gap-x-10 max-w-[20rem] mt-8">
+                  {[
+                  FaHtml5,
+                  FaJs,
+                  SiTypescript,
+                  FaReact,
+                  SiFirebase,
+                  FaCss3Alt,
+                  SiTailwindcss,
+                  FaGitAlt
+                  ].map((Icon, index) => (
+                  <div key={index} className="w-8 h-8 md:w-16 md:h-16 bg-gray-800/50 rounded-lg flex items-center justify-center hover:bg-gray-700/50 transition-colors">
+                    <Icon className="text-2xl md:text-3xl text-[#7b9cea]" />
+                  </div> 
+                  ))}
+                  </div>
+                </div>
+                </div>
+                <div className="hidden lg:grid grid-cols-2 gap-2 max-w-[28rem] lg:ml-40">
                 {[
-                FaHtml5,
-                FaJs,
-                SiTypescript,
-                FaReact,
-                SiFirebase,
-                FaCss3Alt,
-                SiTailwindcss,
-                FaGitAlt
+                  FaHtml5,
+                  FaJs,
+                  SiTypescript,
+                  FaReact,
+                  SiFirebase,
+                  FaCss3Alt,
+                  SiTailwindcss,
+                  FaGitAlt
                 ].map((Icon, index) => (
-                <div key={index} className="w-8 h-8 md:w-16 md:h-16 bg-gray-800/50 rounded-lg flex items-center justify-center hover:bg-gray-700/50 transition-colors">
-                  <Icon className="text-2xl md:text-3xl text-[#7b9cea]" />
-                </div> 
+                  <div key={index} className="w-10 md:w-20 h-10 md:h-20 bg-gray-800/50 rounded-lg flex items-center justify-center hover:bg-gray-700/50 transition-colors">
+                  <Icon className="text-4xl text-[#7b9cea]" />
+                  </div> 
                 ))}
                 </div>
               </div>
-              </div>
-              <div className="hidden lg:grid grid-cols-2 gap-2 max-w-[28rem] lg:ml-40">
-              {[
-                FaHtml5,
-                FaJs,
-                SiTypescript,
-                FaReact,
-                SiFirebase,
-                FaCss3Alt,
-                SiTailwindcss,
-                FaGitAlt
-              ].map((Icon, index) => (
-                <div key={index} className="w-10 md:w-20 h-10 md:h-20 bg-gray-800/50 rounded-lg flex items-center justify-center hover:bg-gray-700/50 transition-colors">
-                <Icon className="text-4xl text-[#7b9cea]" />
-                </div> 
-              ))}
-              </div>
-            </div>
-            {/* Goal */}
-            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center p-2 lg:p-0">
-              my goal? creating seamless, engaging, and user-friendly digital experiences.
-            </p>
+              {/* Goal */}
+              <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center p-2 lg:p-0">
+                my goal? creating seamless, engaging, and user-friendly digital experiences.
+              </p>
             </div>
         </div>
       </section>
