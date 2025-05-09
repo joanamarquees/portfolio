@@ -7,7 +7,9 @@ export const projects = [
   {
     title: `Andre's portfolio`,
     status: '(in production)',
-    description: ``,
+    description: `A custom-built portfolio designed to showcase Andre's skills and projects.
+    The goal was to create a sleek and interactive experience that highlights his work in a
+    visually unique engaging way. `,
     image: portfolio_andre,
     alt: `Andre's portfolio`,
     link: null,
@@ -39,45 +41,6 @@ export const projects = [
     slideFrom: 'hiddenRight',
   },
   {
-    title: 'Synced City',
-    status: null,
-    description: `For my first hackathon, HackTogether, I teamed
-      up with my partner, André Santos, to create SynqCity —a social app designed to connect people. Our goal was
-      to encourage users to step out of their comfort zones
-      and explore underground events, new restaurants,
-      trending hotspots, and social gatherings happening nearby.`,
-    image: synqcity,
-    alt: 'Synced City Project',
-    link: 'https://multisynq-hackathon-frontend.vercel.app/',
-    slideFrom: 'hiddenLeft',
-  },
-    {
-    title: 'Synced City',
-    status: null,
-    description: `For my first hackathon, HackTogether, I teamed
-      up with my partner, André Santos, to create SynqCity —a social app designed to connect people. Our goal was
-      to encourage users to step out of their comfort zones
-      and explore underground events, new restaurants,
-      trending hotspots, and social gatherings happening nearby.`,
-    image: synqcity,
-    alt: 'Synced City Project',
-    link: 'https://multisynq-hackathon-frontend.vercel.app/',
-    slideFrom: 'hiddenLeft',
-  },
-    {
-    title: 'Synced City',
-    status: null,
-    description: `For my first hackathon, HackTogether, I teamed
-      up with my partner, André Santos, to create SynqCity —a social app designed to connect people. Our goal was
-      to encourage users to step out of their comfort zones
-      and explore underground events, new restaurants,
-      trending hotspots, and social gatherings happening nearby.`,
-    image: synqcity,
-    alt: 'Synced City Project',
-    link: 'https://multisynq-hackathon-frontend.vercel.app/',
-    slideFrom: 'hiddenLeft',
-  },
-    {
     title: 'Synced City',
     status: null,
     description: `For my first hackathon, HackTogether, I teamed
