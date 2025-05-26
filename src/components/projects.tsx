@@ -11,7 +11,8 @@ export default function Projects() {
   const projectLinks: Record<string, string> = {
     '/src/assets/projects/kashbuddy.svg': 'https://kashbuddy.vercel.app/',
     '/src/assets/projects/sinqcity.svg': 'https://multisynq-hackathon-frontend.vercel.app/',
-    // Add more if needed
+    '/src/assets/projects/portfolio-andre.svg': 'https://arrz.tudu.dev/',
+    // Add more project links as needed
   };
 
   const handleModalImageClick = (e: React.MouseEvent<HTMLImageElement>) => {

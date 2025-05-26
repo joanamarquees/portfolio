@@ -8,6 +8,8 @@ import Projects from './components/projects'
 import { MdEmail } from 'react-icons/md'
 import { SiFirebase, SiTailwindcss, SiTypescript } from 'react-icons/si'
 
+import { VelocityScroll } from "./components/marquee";
+
 import hello from './assets/hello.svg'
 
 function App() {
@@ -23,7 +25,8 @@ function App() {
           
           {/* Marquee text */}
           <div className="absolute bottom-[15%] md:bottom-[10%] w-full flex flex-col text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight">
-            <div className="flex whitespace-nowrap">
+            <VelocityScroll> & Frontend developer & Web designer</VelocityScroll>
+            {/* <div className="flex whitespace-nowrap">
               <div className="animate-marquee-2 flex gap-[50vw] opacity-90">
                 <p className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Frontend developer</p>
                 <p className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Frontend developer</p>
@@ -36,7 +39,7 @@ function App() {
                 <p>&amp; Web Designer</p>
                 <p>&amp; Web Designer</p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Intro text */}

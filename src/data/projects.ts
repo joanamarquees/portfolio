@@ -6,13 +6,13 @@ import portfolio_andre from '../assets/projects/portfolio-andre.svg'
 export const projects = [
   {
     title: `Andre's portfolio`,
-    status: '(in production)',
+    status: null,
     description: `A custom-built portfolio designed to showcase Andre's skills and projects.
     The goal was to create a sleek and interactive experience that highlights his work in a
     visually unique engaging way. `,
     image: portfolio_andre,
     alt: `Andre's portfolio`,
-    link: null,
+    link: 'https://arrz.tudu.dev/',
     slideFrom: 'hiddenRight',
   },
   {
@@ -37,7 +37,7 @@ export const projects = [
       my style.`,
     image: kashbuddy,
     alt: 'Kashbuddy Project',
-    link: 'https://kashbuddy.vercel.app/',
+    link: 'https://kashbuddy.tudu.dev/',
     slideFrom: 'hiddenRight',
   },
   {
