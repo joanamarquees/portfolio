@@ -1,44 +1,30 @@
-# PORTFOLIO SKETCH
+# 🌐 Personal Portfolio
 
-## HOME PAGE
+A personal portfolio website built to showcase my projects and tell my story as a developer.
 
-FRONTEND DEVELOPER & WEB DESIGNER
+🔗 **Live site:** [joanamarques.tudu.dev](https://joanamarques.tudu.dev)
 
-Hey there, I'm Joana.
+---
 
-I make websites look good and work well. When I’m not coding, I’m either designing, crocheting something unnecessary, or convincing my rabbits that my cables are not chew toys.
+## 💡 About
 
-## Table of Contents
+This site was made to introduce myself, highlight the projects I'm most proud of, and give visitors a sense of how I think and work. I wanted it to reflect my personality: fun, light and professional at the same time.
 
-- [PORTFOLIO SKETCH](#portfolio-sketch)
-  - [HOME PAGE](#home-page)
-  - [Table of Contents](#table-of-contents)
-  - [ABOUT](#about)
-  - [CROCHET WORK](#crochet-work)
-  - [PROJECTS](#projects)
+---
 
-## ABOUT
+## 🧠 Thought Process & Decisions
 
-Joana – Frontend Developer & Web Designer
+**Built in one week**. I set myself a tight deadline on purpose. I wanted to practice shipping something real under pressure rather than endlessly polishing in private.
 
-I’m Joana, a frontend developer and web designer passionate about crafting intuitive and visually appealing applications. I believe great design should be simple yet unique, blending clarity with creativity to create standout user experiences.
+A few decisions I made along the way:
 
-With a strong background in both design and development, I bring ideas to life—from initial concepts in Figma to fully functional frontends. My expertise lies in web and native applications, where I leverage technologies like React.js, React Native, JavaScript, Tailwind CSS, and Firebase. I also have experience with Git and collaborative workflows.
+- **Kept it simple by design.** A portfolio should let the work speak. I resisted the urge to over-engineer the layout and focused on clarity instead.
+- **Wrote the content first.** Before writing a single line of code, I drafted what I actually wanted to say about myself and my projects. The design followed the content, not the other way around.
+- **Prioritized readability over flashiness.** Animations and effects are fun, but I wanted anyone landing on the page (whether on mobile or desktop) to immediately understand who I am and what I've built.
 
-Beyond coding, I’m a simple and easygoing person who thrives in creative environments. I’ve had the unique experience of living in four different countries—Angola, Cape Verde, France, and now Portugal—which has broadened my perspective and appreciation for diverse cultures. When I’m not building apps, you might find me crocheting, reminiscing about my dancing days, or spending time with my two bunnies.
+---
 
-My goal? To create apps that feel as good as they look—intuitive, engaging, and one of a kind.
+## 🛠️ Tech Stack
 
-Tecnologies used: Figma, Javascript, ReactJS, React Native, Git
-
-## CROCHET WORK
-
-Some crochet works??
-
-## PROJECTS
-
-- Kashbuddy
-- SynqCity
-- Bau
-
-COLORS: blue-300
+- HTML / CSS / React / Tailwind CSS
+- Deployed via Vercel
