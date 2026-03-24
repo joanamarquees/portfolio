@@ -1,26 +1,19 @@
 /** biome-ignore-all lint/correctness/useUniqueElementIds: id's are used to redirect header sections to the  */
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: index is used, and the order will not change */
-import "./App.css";
-import "./styles/marquee.css";
-import { motion } from "framer-motion";
-import {
-	FaHtml5,
-	FaCss3Alt,
-	FaJs,
-	FaReact,
-	FaLinkedin,
-	FaGithub,
-	FaGitAlt,
-} from "react-icons/fa";
 
-import Header from "./components/header";
-import Projects from "./components/projects";
-import { MdEmail } from "react-icons/md";
-import { SiFirebase, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { motion } from "framer-motion"
+import { FaCss3Alt, FaGitAlt, FaGithub, FaHtml5, FaJs, FaLinkedin, FaReact } from "react-icons/fa"
+import { MdEmail } from "react-icons/md"
+import { SiFirebase, SiTailwindcss, SiTypescript } from "react-icons/si"
 
-import { VelocityScroll } from "./components/marquee";
+import hello from "./assets/hello.svg"
+import Header from "./components/header"
 
-import hello from "./assets/hello.svg";
+import { VelocityScroll } from "./components/marquee"
+import Projects from "./components/projects"
+
+import "./App.css"
+import "./styles/marquee.css"
 
 function App() {
 	return (
@@ -34,24 +27,7 @@ function App() {
 
 					{/* Marquee text */}
 					<div className="absolute bottom-[15%] md:bottom-[10%] w-full flex flex-col text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight">
-						<VelocityScroll>
-							{" "}
-							& Frontend developer & Web designer
-						</VelocityScroll>
-						{/* <div className="flex whitespace-nowrap">
-              <div className="animate-marquee-2 flex gap-[50vw] opacity-90">
-                <p className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Frontend developer</p>
-                <p className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Frontend developer</p>
-                <p className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Frontend developer</p>
-              </div>
-            </div>
-            <div className="flex whitespace-nowrap">
-              <div className="animate-marquee-1 flex gap-[100vw]">
-                <p>&amp; Web Designer</p>
-                <p>&amp; Web Designer</p>
-                <p>&amp; Web Designer</p>
-              </div>
-            </div> */}
+						<VelocityScroll> & Frontend developer & Web designer</VelocityScroll>
 					</div>
 
 					{/* Intro text */}
@@ -62,14 +38,12 @@ function App() {
 						className="absolute bottom-[50%] right-5 md:right-10 lg:right-20 w-auto max-w-md"
 					>
 						<p className="text-right text-md md:text-lg leading-relaxed tracking-wide text-white/90">
-							Hey there, I'm{" "}
-							<span className="text-[#7b9cea] font-semibold">Joana</span>.
+							Hey there, I'm <span className="text-[#7b9cea] font-semibold">Joana</span>.
 							<br />
 							<br />I make websites look good and work well.
 							<br />
-							When I'm not coding, I'm either designing, crocheting something
-							unnecessary, or convincing my bunnies that my cables are not chew
-							toys.
+							When I'm not coding, I'm either designing, crocheting something unnecessary, or
+							convincing my bunnies that my cables are not chew toys.
 						</p>
 					</motion.div>
 
@@ -100,17 +74,16 @@ function App() {
 						<div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-10">
 							<div className="flex flex-col gap-6 text-center md:text-left">
 								<p className="max-w-[40rem] text-xl md:text-xl lg:text-3xl">
-									Hey, I'm Joana! A frontend developer and web designer who
-									creates intuitive and visually appealing apps. I work from
-									concept to code, using mostly Figma, React & Tailwind.
+									Hey, I'm Joana! A frontend developer and web designer who creates intuitive and
+									visually appealing apps. I work from concept to code, using mostly Figma, React &
+									Tailwind.
 								</p>
 								<p className="max-w-[50rem] text-xl md:text-xl lg:text-3xl">
-									I often say I'm from the world. Though I was born in Portugal,
-									my life has been split between Angola, Cape Verde, and France.
-									This has given me a natural ability to adapt and a deep love
-									for traveling and exploring new cultures. When I'm not pulling
-									my hair out over code, you'll find me crocheting and creating
-									interior design projects for houses that don't even exist.
+									I often say I'm from the world. Though I was born in Portugal, my life has been
+									split between Angola, Cape Verde, and France. This has given me a natural ability
+									to adapt and a deep love for traveling and exploring new cultures. When I'm not
+									pulling my hair out over code, you'll find me crocheting and creating interior
+									design projects for houses that don't even exist.
 								</p>
 								<div className="lg:hidden flex flex-col items-center w-full px-4">
 									<div className="grid grid-cols-4 lg:grid-cols-2 gap-2 lg:gap-x-10 max-w-[20rem] mt-8">
@@ -122,7 +95,7 @@ function App() {
 											SiFirebase,
 											FaCss3Alt,
 											SiTailwindcss,
-											FaGitAlt,
+											FaGitAlt
 										].map((Icon, index) => (
 											<div
 												key={index}
@@ -143,7 +116,7 @@ function App() {
 									SiFirebase,
 									FaCss3Alt,
 									SiTailwindcss,
-									FaGitAlt,
+									FaGitAlt
 								].map((Icon, index) => (
 									<div
 										key={index}
@@ -156,8 +129,7 @@ function App() {
 						</div>
 						{/* Goal */}
 						<p className="text-xl md:text-2xl lg:text-3xl font-bold text-center p-2 lg:p-0">
-							my goal? creating seamless, engaging, and user-friendly digital
-							experiences.
+							my goal? creating seamless, engaging, and user-friendly digital experiences.
 						</p>
 					</div>
 				</div>
@@ -169,13 +141,7 @@ function App() {
 				className="flex h-screen w-full min-h-[70vh] text-gray-300 relative py-10 px-5 md:px-0 items-center"
 			>
 				<div className="absolute right-0 md:right-20 scale-x-[-1] -bottom-6 w-48 md:w-72 lg:w-96 sm:bottom-0">
-					<img
-						src={hello}
-						alt="Hello illustration"
-						height="100%"
-						width="100%"
-						className="object-cover"
-					/>
+					<img src={hello} alt="Hello illustration" className="object-cover h-full w-full" />
 				</div>
 				<div className="w-full flex flex-col gap-8 md:gap-16 items-center">
 					<p className="text-3xl md:text-4xl lg:text-6xl font-light text-center max-w-7xl px-4 leading-relaxed">
@@ -213,7 +179,7 @@ function App() {
 				</div>
 			</section>
 		</div>
-	);
+	)
 }
 
-export default App;
+export default App
