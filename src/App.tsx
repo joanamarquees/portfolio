@@ -6,7 +6,7 @@ import { FaCss3Alt, FaGitAlt, FaGithub, FaHtml5, FaJs, FaLinkedin, FaReact } fro
 import { MdEmail } from "react-icons/md"
 import { SiFirebase, SiTailwindcss, SiTypescript } from "react-icons/si"
 
-import hello from "./assets/hello.svg"
+import hello from "./assets/hello.png"
 import Header from "./components/header"
 
 import { VelocityScroll } from "./components/marquee"
