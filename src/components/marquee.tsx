@@ -92,7 +92,11 @@ function ParallaxText({
 		>
 			<motion.div className="inline-block" style={{ x }}>
 				{Array.from({ length: repetitions }).map((_, i) => (
-					<span key={i} ref={i === 0 ? textRef : null}>
+					<span
+						key={i}
+						ref={i === 0 ? textRef : null}
+						className="text-transparent bg-clip-text bg-gradient-to-r from-[#dae5ff] via-[#9dbafd] to-[#dae5ff] from-10% to-90%"
+					>
 						{children}{" "}
 					</span>
 				))}
@@ -111,7 +115,7 @@ export function VelocityScroll({
 	return (
 		<div
 			className={cn(
-				"relative w-full text-7xl font-bold tracking-[-0.02em] md:text-9xl md:leading-36 text-transparent safari:text-white bg-clip-text bg-gradient-to-r from-white to-[#7b9cea]/70",
+				"relative w-full text-5xl font-bold tracking-[-0.02em] md:text-9xl leading-16 md:leading-36",
 				className,
 			)}
 			{...props}
