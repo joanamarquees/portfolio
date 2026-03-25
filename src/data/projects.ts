@@ -1,7 +1,7 @@
-import synqcity from "../assets/projects/synqcity.svg";
-import kashbuddy from "../assets/projects/kashbuddy.svg";
-import bau from "../assets/projects/bau.svg";
-import portfolio_andre from "../assets/projects/portfolio-andre.svg";
+import bau from "../assets/projects/bau.png"
+import kashbuddy from "../assets/projects/kashbuddy.png"
+import portfolio_andre from "../assets/projects/portfolio-andre.png"
+import synqcity from "../assets/projects/synqcity.png"
 
 export const projects = [
 	{
@@ -13,7 +13,7 @@ export const projects = [
 		image: portfolio_andre,
 		alt: `Andre's portfolio`,
 		link: "https://arrz.tudu.dev/",
-		slideFrom: "hiddenRight",
+		slideFrom: "hiddenRight"
 	},
 	{
 		title: "BAU",
@@ -24,7 +24,7 @@ export const projects = [
 		image: bau,
 		alt: "BAU Project",
 		link: null,
-		slideFrom: "hiddenLeft",
+		slideFrom: "hiddenLeft"
 	},
 	{
 		title: "Kashbuddy",
@@ -38,7 +38,7 @@ export const projects = [
 		image: kashbuddy,
 		alt: "Kashbuddy Project",
 		link: "https://kashbuddy.tudu.dev/",
-		slideFrom: "hiddenRight",
+		slideFrom: "hiddenRight"
 	},
 	{
 		title: "Synced City",
@@ -51,6 +51,6 @@ export const projects = [
 		image: synqcity,
 		alt: "Synced City Project",
 		link: "https://multisynq-hackathon-frontend.vercel.app/",
-		slideFrom: "hiddenLeft",
-	},
-];
+		slideFrom: "hiddenLeft"
+	}
+]

@@ -15,7 +15,7 @@
 			},
 			"suspicious": {
 				"noUnknownAtRules": "off",
-				"noArrayIndexKey": "warn",
+				"noArrayIndexKey": "off",
 				"noConsole": "off"
 			},
 			"correctness": {
