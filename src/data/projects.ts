@@ -37,7 +37,7 @@ export const projects = [
       my style.`,
 		image: kashbuddy,
 		alt: "Kashbuddy Project",
-		link: "https://kashbuddy.tudu.dev/",
+		link: "https://kashbuddy.vercel.app/",
 		slideFrom: "hiddenRight"
 	},
 	{
