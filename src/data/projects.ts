@@ -1,9 +1,21 @@
 import bau from "../assets/projects/bau.png"
+import escolhe_e_cala from "../assets/projects/escolhe-e-cala.png"
 import kashbuddy from "../assets/projects/kashbuddy.png"
 import portfolio_andre from "../assets/projects/portfolio-andre.png"
 import synqcity from "../assets/projects/synqcity.png"
 
 export const projects = [
+	{
+		title: `Escolhe e cala`,
+		status: "(in production)",
+		description: `A two-sided platform for discovering restaurants and food businesses. A customer
+		app for finding places through map-based search and filters, paired with a dashboard for the
+		businesses themselves. UX/UI in Figma with a Next.js frontend.`,
+		image: escolhe_e_cala,
+		alt: `Escolhe-e-Cala`, //no live URL yet
+		link: null,
+		slideFrom: "hiddenLeft"
+	},
 	{
 		title: `Andre's portfolio`,
 		status: null,
@@ -16,8 +28,8 @@ export const projects = [
 		slideFrom: "hiddenRight"
 	},
 	{
-		title: "BAU",
-		status: "(in production)",
+		title: "BAÚ",
+		status: null,
 		description: `I'm currently developing a social media platform
       designed to give underground artists more visibility. It will be a space where they can showcase their work,
       share events, sell their art and products, and even offer tickets for their own events.`,
