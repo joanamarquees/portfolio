@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { Route, Routes, useLocation } from "react-router-dom"
 
+import CaseStudyPage from "./pages/CaseStudyPage"
 import LandingPage from "./pages/LandingPage"
 
 import "./App.css"
@@ -26,6 +27,7 @@ function App() {
 			<ScrollToTop />
 			<Routes>
 				<Route path="/" element={<LandingPage />} />
+				<Route path="/work/:slug" element={<CaseStudyPage />} />
 				<Route path="*" element={<LandingPage />} />
 			</Routes>
 		</>

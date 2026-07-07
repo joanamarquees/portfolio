@@ -3,6 +3,7 @@
 import { AnimatePresence, motion, useInView } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import { IoClose } from "react-icons/io5"
+import { Link } from "react-router-dom"
 import { projects } from "../data/projects"
 
 const slideVariants = {
@@ -44,6 +45,13 @@ const ProjectItem = ({
 						)}
 						{project.status && <p className="animate-pulse text-green-200">{project.status}</p>}
 						<p className="text-lg text-gray-400 mt-2">{project.description}</p>
+						<Link
+							to={`/work/${project.slug}`}
+							className="group mt-3 inline-flex items-center gap-1.5 text-base text-[#7b9cea] hover:text-[#3F5CA2] transition-colors"
+						>
+							view case study
+							<span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+						</Link>
 					</div>
 					<div className="w-6 h-6 rounded-full bg-transparent lg:bg-white hidden md:block absolute left-1/2 -translate-x-1/2"></div>
 					<div className="w-full md:w-1/2 flex justify-center items-center order-1 md:order-none">
@@ -67,6 +75,13 @@ const ProjectItem = ({
 						)}
 						{project.status && <p className="animate-pulse text-green-200">{project.status}</p>}
 						<p className="text-lg text-gray-400 mt-2">{project.description}</p>
+						<Link
+							to={`/work/${project.slug}`}
+							className="group mt-3 inline-flex items-center gap-1.5 text-base text-[#7b9cea] hover:text-[#3F5CA2] transition-colors"
+						>
+							view case study
+							<span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+						</Link>
 					</div>
 					<div className="w-6 h-6 rounded-full bg-transparent lg:bg-white hidden md:block absolute left-1/2 -translate-x-1/2"></div>
 					<div className="w-full md:w-1/2 flex justify-center items-center order-1">
