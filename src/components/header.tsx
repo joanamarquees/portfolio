@@ -47,7 +47,7 @@ const Header = () => {
 	}
 
 	return (
-		<header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm shadow-md py-2 md:py-4 px-5 md:px-10 overflow-hidden w-screen h-auto">
+		<header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm shadow-md py-2 md:py-4 px-5 md:px-10 overflow-hidden w-full h-auto">
 			<div className="flex justify-between items-center relative">
 				<a href="#" onClick={(e) => scrollToSection(e, "root")}>
 					<div

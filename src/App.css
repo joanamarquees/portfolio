@@ -99,11 +99,9 @@ section {
 	backdrop-filter: blur(5px);
 }
 
-/* biome-ignore lint/suspicious/noUnknownAtRules: <its correct> */
 @custom-variant safari {
 	@supports (-webkit-hyphens: none) {
 		& {
-			/* biome-ignore lint/suspicious/noUnknownAtRules: <its correct> */
 			@slot;
 		}
 	}
