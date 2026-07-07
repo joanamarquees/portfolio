@@ -1,184 +1,34 @@
-/** biome-ignore-all lint/correctness/useUniqueElementIds: id's are used to redirect header sections to the  */
-/** biome-ignore-all lint/suspicious/noArrayIndexKey: index is used, and the order will not change */
+import { useEffect } from "react"
+import { Route, Routes, useLocation } from "react-router-dom"
 
-import { motion } from "framer-motion"
-import { FaCss3Alt, FaGitAlt, FaGithub, FaHtml5, FaJs, FaLinkedin, FaReact } from "react-icons/fa"
-import { MdEmail } from "react-icons/md"
-import { SiFirebase, SiTailwindcss, SiTypescript } from "react-icons/si"
-
-import hello from "./assets/hello.png"
-import Header from "./components/header"
-
-import { VelocityScroll } from "./components/marquee"
-import Projects from "./components/projects"
+import LandingPage from "./pages/LandingPage"
 
 import "./App.css"
 import "./styles/marquee.css"
 
+/**
+ * Resets the scroll position to the top whenever the route changes, so opening
+ * a case study starts at the hero instead of inheriting the landing scroll.
+ */
+function ScrollToTop() {
+	const { pathname } = useLocation()
+
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [pathname])
+
+	return null
+}
+
 function App() {
 	return (
-		<div className="bg-black text-white font-sans">
-			{/* Landing page */}
-			<div className="h-screen">
-				<Header />
-				<div className="relative h-full w-full overflow-x-hidden">
-					{/* Background gradient */}
-					<div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-transparent pointer-events-none" />
-
-					{/* Marquee text */}
-					<div className="absolute bottom-[15%] md:bottom-[10%] w-full flex flex-col text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight">
-						<VelocityScroll> & Frontend developer & Web designer</VelocityScroll>
-					</div>
-
-					{/* Intro text */}
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8 }}
-						className="absolute bottom-[50%] right-5 md:right-10 lg:right-20 w-auto max-w-md"
-					>
-						<p className="text-right text-md md:text-lg leading-relaxed tracking-wide text-white/90">
-							Hey there, I'm <span className="text-[#7b9cea] font-semibold">Joana</span>.
-							<br />
-							<br />I make websites look good and work well.
-							<br />
-							When I'm not coding, I'm either designing, crocheting something unnecessary, or
-							convincing my bunnies that my cables are not chew toys.
-						</p>
-					</motion.div>
-
-					{/* Decorative elements */}
-					<div className="absolute top-40 left-20 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl" />
-					<div className="absolute bottom-40 right-40 w-40 h-40 bg-purple-500/5 rounded-full blur-3xl" />
-				</div>
-			</div>
-
-			{/* Projects Section */}
-			<Projects />
-
-			<section
-				id="about"
-				className="flex flex-col md:flex-row w-screen min-h-screen py-10 text-gray-300 overflow-x-hidden"
-			>
-				<div className="w-full md:w-[20%] flex-shrink-0 flex items-center justify-center">
-					<div className="transform md:-rotate-90">
-						<h2 className="w-full text-7xl md:text-[8rem] lg:text-[10rem] font-bold animate-wave bg-gradient-to-r from-[#dae5ff] via-[#3f5ca2] to-[#dae5ff] text-transparent bg-clip-text bg-[length:200%_100%]">
-							ABOUT
-						</h2>
-					</div>
-				</div>
-
-				{/* ABOUT content */}
-				<div className="w-full md:w-[80%] flex items-center justify-center py-10 md:py-0">
-					<div className="w-full flex flex-col gap-10 px-4 lg:px-20">
-						<div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-10">
-							<div className="flex flex-col gap-6 text-center md:text-left">
-								<p className="max-w-[40rem] text-xl md:text-xl lg:text-3xl">
-									Hey, I'm Joana! A frontend developer and web designer who creates intuitive and
-									visually appealing apps. I work from concept to code, using mostly Figma, React &
-									Tailwind.
-								</p>
-								<p className="max-w-[50rem] text-xl md:text-xl lg:text-3xl">
-									I often say I'm from the world. Though I was born in Portugal, my life has been
-									split between Angola, Cape Verde, and France. This has given me a natural ability
-									to adapt and a deep love for traveling and exploring new cultures. When I'm not
-									pulling my hair out over code, you'll find me crocheting and creating interior
-									design projects for houses that don't even exist.
-								</p>
-								<div className="lg:hidden flex flex-col items-center w-full px-4">
-									<div className="grid grid-cols-4 lg:grid-cols-2 gap-2 lg:gap-x-10 max-w-[20rem] mt-8">
-										{[
-											FaHtml5,
-											FaJs,
-											SiTypescript,
-											FaReact,
-											SiFirebase,
-											FaCss3Alt,
-											SiTailwindcss,
-											FaGitAlt
-										].map((Icon, index) => (
-											<div
-												key={index}
-												className="w-8 h-8 md:w-16 md:h-16 bg-gray-800/50 rounded-lg flex items-center justify-center hover:bg-gray-700/50 transition-colors"
-											>
-												<Icon className="text-2xl md:text-3xl text-[#7b9cea]" />
-											</div>
-										))}
-									</div>
-								</div>
-							</div>
-							<div className="hidden lg:grid grid-cols-2 gap-2 max-w-[28rem] lg:ml-40">
-								{[
-									FaHtml5,
-									FaJs,
-									SiTypescript,
-									FaReact,
-									SiFirebase,
-									FaCss3Alt,
-									SiTailwindcss,
-									FaGitAlt
-								].map((Icon, index) => (
-									<div
-										key={index}
-										className="w-10 md:w-20 h-10 md:h-20 bg-gray-800/50 rounded-lg flex items-center justify-center hover:bg-gray-700/50 transition-colors"
-									>
-										<Icon className="text-4xl text-[#7b9cea]" />
-									</div>
-								))}
-							</div>
-						</div>
-						{/* Goal */}
-						<p className="text-xl md:text-2xl lg:text-3xl font-bold text-center p-2 lg:p-0">
-							my goal? creating seamless, engaging, and user-friendly digital experiences.
-						</p>
-					</div>
-				</div>
-			</section>
-
-			{/* Footer/Contact Section */}
-			<section
-				id="contact"
-				className="flex h-screen w-full min-h-[70vh] text-gray-300 relative py-10 px-5 md:px-0 items-center"
-			>
-				<div className="absolute right-0 md:right-20 scale-x-[-1] -bottom-6 w-48 md:w-72 lg:w-96 sm:bottom-0">
-					<img src={hello} alt="Hello illustration" className="object-cover h-full w-full" />
-				</div>
-				<div className="w-full flex flex-col gap-8 md:gap-16 items-center">
-					<p className="text-3xl md:text-4xl lg:text-6xl font-light text-center max-w-7xl px-4 leading-relaxed">
-						Got a question or proposal, or just want to say{" "}
-						<span className="text-[#7b9cea] font-normal">hello</span>? Go ahead.
-					</p>
-
-					<div className="flex flex-col md:flex-row gap-6 md:gap-12">
-						<a
-							href="https://www.linkedin.com/in/joana-marques-33a170220/"
-							className="flex items-center gap-3 text-xl md:text-2xl hover:text-[#7b9cea] transition-colors"
-						>
-							<FaLinkedin className="text-3xl md:text-4xl" />
-							LinkedIn
-						</a>
-						<a
-							href="https://github.com/joanamarquees"
-							className="flex items-center gap-3 text-xl md:text-2xl hover:text-[#7b9cea] transition-colors"
-						>
-							<FaGithub className="text-3xl md:text-4xl" />
-							GitHub
-						</a>
-						<a
-							href="mailto:joanacfmarques@ulisboa.tecnico.pt"
-							className="flex items-center gap-3 text-xl md:text-2xl hover:text-[#7b9cea] transition-colors"
-						>
-							<MdEmail className="text-3xl md:text-4xl" />
-							Email
-						</a>
-					</div>
-
-					<p className="text-base md:text-lg mt-8 md:mt-12 text-gray-500">
-						&copy; 2025 ~ Made with ♡ by Joana M
-					</p>
-				</div>
-			</section>
-		</div>
+		<>
+			<ScrollToTop />
+			<Routes>
+				<Route path="/" element={<LandingPage />} />
+				<Route path="*" element={<LandingPage />} />
+			</Routes>
+		</>
 	)
 }
 
